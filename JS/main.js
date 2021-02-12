@@ -11,60 +11,6 @@ if (localStorage.getItem('account') == null && location.pathname == "/index.html
 
 
 
-
-
-
-
-
-//account create
-
-// function logSubmit(e) {
-
-//     log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
-//     console.log(e);
-
-
-//     event.preventDefault();
-
-//   }
-// var form = document.querySelector("form");
-// window.onload = function() {
-
-//     form.onsubmit = submitted.bind(form);
-
-// }
-
-// function submitted(e) {
-//     e.preventDefault();
-//     console.log(form);
-// }
-let accountName;
-
-// let account ={
-//     accountName=this.accountName,
-//     // cash=this.cash
-// };
-// console.log(account);
-
-
-
-
-
-
-
-
-
-
-//   let form = document.getElementById('form');
-//   let log = document.getElementById('log');
-//   form.addEventListener('submit', logSubmit);
-
-
-
-
-
-
-
 let numberArray = [];
 
 console.log(numberArray);
