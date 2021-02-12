@@ -15,7 +15,8 @@ form2.addEventListener("submit", function (e) {
     let accuntNr = {
         name: accountName,
         cash: 500,
-        storehouse:100
+        storehouse:100,
+        apple:0
     };
     
     let myAccountSerialized = JSON.stringify(accuntNr);

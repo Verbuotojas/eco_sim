@@ -218,10 +218,14 @@ if (localStorage.getItem('cash') == null) {
 let cashView = document.getElementById('cashView');
 let storeView = document.getElementById('storeView');
 
+let myAccountDeserialized = JSON.parse(localStorage.getItem('account'));
+console.log(myAccountDeserialized);
+
+
 console.log(localStorage.getItem('cash'));
 
-cashView.textContent = localStorage.getItem('cash') + ' $';
-storeView.textContent = localStorage.getItem('apple');
+cashView.textContent = myAccountDeserialized.cash + ' $';
+storeView.textContent = myAccountDeserialized.apple;
 
 
 
