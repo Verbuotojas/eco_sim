@@ -34,98 +34,38 @@
 <body>
 
 
-
+    <!-- <form>
+        <input type="text" name="name">
+        <input type="submit" name="submit">
+    </form> -->
 
 
     <div class="container">
-
-
-        <div class="d-flex flex-row">
-            <div class="row col-6">
-                <p id="cashView"> </p>
+        <form style="margin-top: 40px" name="form" id="form2">
+            <div class="row justify-content-md-center">
+                <!-- <div class="col col-lg-2">
+                    <input type="text" class="firstNumber form-control" name="firstNumber">
+                </div>
+                <div class="col col-md-auto">
+                    <p>+</p>
+                </div> -->
+                <div class="col col-lg-2">
+                    <input type="text" class="accountName form-control" name="accountName">
+                </div>
+                <div class="col">
+                    <button type="submit" class="buttonSum btn btn-primary">=</button>
+                </div>
             </div>
-            <div class="row col-6">
-                <p id="storeView"> </p>
-            </div>
-
-        </div>
-
-
-
-
-        <div class="row col-12 d-flex p-2 backgroundFoto">
-
-
-
-            <div class="carousel-caption col-12">
-
-                <p>dedefefe Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore quasi tenetur enim nemo! Veniam magni in, non tenetur, ratione ut perferendis voluptatem nostrum iure. Numquam officiis praesentium eaque neque quibusdam accusantium consectetur molestiae aperiam velit, enim, dignissimos magnam reiciendis quisquam officia! Repellat, nesciunt facere laudantium, nemo magni a quo? Blanditiis doloribus deserunt distinctio, dicta mollitia iste id reprehenderit laborum saepe ab amet iure, magnam consectetur ea est illum eum. Omnis quidem, tempore. Sequi animi accusantium minima consequuntur libero, repellat vero.</p>
-
-            </div>
-
-            <canvas id="myChart" height="100"></canvas>
-            <!--       Chart.js Canvas Tag -->
-
-
-
-
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-        <div>
-
-            <div class="row">
-                <button type="submit" class="btn btn-dark btn-block mt-3" id="button-buy">BUY</button>
-
-
-            </div>
-            <div class="row">
-                <button type="submit" class="btn btn-dark btn-block mt-3" id="button-sell">SELL</button>
-            </div>
-
-            <input type="number" id="quantity" name="quantity" value="1" min="1" max="5" class="my-3">
-
-
-        </div>
-
-        <div class='loader' style='--n: 1; --f: 0'></div>
-
-        <!--       <div id="container"></div>-->
-
-
-
+        </form>
+        <p>Sum is: <span id="sum"></span></p>
     </div>
 
-
-
-    <!-- 
-    <div class="ldBar label-center" data-value="35" data-preset="circle">
-    </div>
-
- -->
+    
 
 
 
-    <!--
-<form action="/action_page.php">
-  <label for="quantity">Quantity (between 1 and 5):</label>
-  <input type="number" id="quantity" name="quantity" min="1" max="5">
-  <input type="submit">
-</form>
--->
 
-
-
-    <script src="JS/main.js"></script>
+    <script src="JS/mainAccount.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>

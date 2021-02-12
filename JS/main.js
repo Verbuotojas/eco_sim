@@ -1,15 +1,63 @@
 
-if(localStorage.getItem('apple') == null){
-    
+if (localStorage.getItem('account') == null && location.pathname == "/index.html") {
+
     console.log('tuscia!~!!!!!!!!!!!!!!!!');
-    
-//    location.replace("account.html");
+    console.log(location.pathname);
+
+    location.replace("account.html");
 }
 
 
 
 
 
+
+
+
+
+
+//account create
+
+// function logSubmit(e) {
+
+//     log.textContent = `Form Submitted! Time stamp: ${event.timeStamp}`;
+//     console.log(e);
+
+
+//     event.preventDefault();
+
+//   }
+// var form = document.querySelector("form");
+// window.onload = function() {
+
+//     form.onsubmit = submitted.bind(form);
+
+// }
+
+// function submitted(e) {
+//     e.preventDefault();
+//     console.log(form);
+// }
+let accountName;
+
+// let account ={
+//     accountName=this.accountName,
+//     // cash=this.cash
+// };
+// console.log(account);
+
+
+
+
+
+
+
+
+
+
+//   let form = document.getElementById('form');
+//   let log = document.getElementById('log');
+//   form.addEventListener('submit', logSubmit);
 
 
 
@@ -170,7 +218,7 @@ setInterval(function () {
                     //   }],
                     yAxes: [{
                         // display: true,
-                         
+
                         ticks: {
                             beginAtZero: true
                         }
@@ -190,7 +238,7 @@ setInterval(function () {
                 //     drawTime: "afterDraw"// (default)
 
                 // },
-           
+
                 animation: {
                     duration: 0
                 }
@@ -253,7 +301,7 @@ function doThing() {
 buttonBuy.onclick = function () {
 
     if (localStorage.getItem('cash') >= numberArray[0] * numberOfThings
-    && localStorage.getItem('storehouse') >= JSON.parse(localStorage.getItem('apple')) +numberOfThings) {
+        && localStorage.getItem('storehouse') >= JSON.parse(localStorage.getItem('apple')) + numberOfThings) {
         localStorage.setItem('cash',
             JSON.parse(localStorage.getItem('cash')) - (numberArray[0] * numberOfThings)
         )
@@ -318,16 +366,16 @@ buttonSell.onclick = function () {
 //       circle.path.setAttribute('stroke', state.color);
 //     }
 //   });
-  
+
 //   bar.animate(1.0);  // Number from 0.0 to 1.0
 
 
 
 CSS.registerProperty({
-	name: '--p', 
-	syntax: '<integer>', 
-	initialValue: 0, 
-	inherits: true
+    name: '--p',
+    syntax: '<integer>',
+    initialValue: 0,
+    inherits: true
 });
 
 
