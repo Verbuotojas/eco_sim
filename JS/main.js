@@ -250,45 +250,60 @@ function doThing() {
 
 buttonBuy.onclick = function () {
 
-    if (localStorage.getItem('cash') >= numberArray[0] * numberOfThings
-        && localStorage.getItem('storehouse') >= JSON.parse(localStorage.getItem('apple')) + numberOfThings) {
-        localStorage.setItem('cash',
-            JSON.parse(localStorage.getItem('cash')) - (numberArray[0] * numberOfThings)
-        )
+    if (myAccountDeserialized.cash >= numberArray[0] * numberOfThings
+        && myAccountDeserialized.storehouse >= myAccountDeserialized.apple + numberOfThings) {
+
+        myAccountDeserialized.cash -= (numberArray[0] * numberOfThings);
+      
+             myAccountDeserialized.apple += JSON.parse(numberOfThings);
 
 
-        if (localStorage.getItem('apple') == null) {
+        let myAccountSerialized = JSON.stringify(myAccountDeserialized);
+        localStorage.setItem('account', myAccountSerialized);
 
-            localStorage.setItem('apple', JSON.stringify(numberOfThings));
-        } else {
+        // localStorage.setItem('cash',
+        //     JSON.parse(localStorage.getItem('cash')) - (numberArray[0] * numberOfThings)
+        // )
 
-            let nubmerApples = JSON.parse(localStorage.getItem('apple'));
 
-            localStorage.setItem('apple', ((nubmerApples) + numberOfThings));
 
-        }
+        // if (localStorage.getItem('apple') == null) {
+
+        //     localStorage.setItem('apple', JSON.stringify(numberOfThings));
+        // } else {
+
+        //     let nubmerApples = JSON.parse(localStorage.getItem('apple'));
+
+        //     localStorage.setItem('apple', ((nubmerApples) + numberOfThings));
+
+        // }
 
     }
-    cashView.textContent = localStorage.getItem('cash') + ' $';
-    storeView.textContent = localStorage.getItem('apple');
+    cashView.textContent = myAccountDeserialized.cash + ' $';
+    storeView.textContent = myAccountDeserialized.apple;
 }
 
 //pardavimai obuoliai
 buttonSell.onclick = function () {
 
-    if (localStorage.getItem('apple') - numberOfThings >= 0) {
-        localStorage.setItem('cash',
-            JSON.parse(localStorage.getItem('cash')) + (numberArray[0] * numberOfThings)
-        )
+    if (myAccountDeserialized.apple - numberOfThings >= 0) {
+
+        myAccountDeserialized.cash += numberArray[0] * numberOfThings; 
+        myAccountDeserialized.apple -= numberOfThings; 
 
 
-        let nubmerApples = JSON.parse(localStorage.getItem('apple'));
+        // localStorage.setItem('cash',
+        //     JSON.parse(localStorage.getItem('cash')) + (numberArray[0] * numberOfThings)
+        // )
 
-        localStorage.setItem('apple', ((nubmerApples) - numberOfThings));
+
+        // let nubmerApples = JSON.parse(localStorage.getItem('apple'));
+
+        // localStorage.setItem('apple', ((nubmerApples) - numberOfThings));
 
     }
-    storeView.textContent = localStorage.getItem('apple');
-    cashView.textContent = localStorage.getItem('cash') + ' $';
+    cashView.textContent = myAccountDeserialized.cash + ' $';
+    storeView.textContent = myAccountDeserialized.apple;
 }
 
 
