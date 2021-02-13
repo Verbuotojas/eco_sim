@@ -9,6 +9,59 @@ body {
     background: #222;
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.c{
+/*  display:inline-block;*/
+    
+      position:absolute;
+      left:0;
+      top:0;
+      z-index:-10;
+    
+}
+
+.notBackground{
+     position:absolute;
+      z-index:0;
+      left:12px;
+      top:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.accountBar{
+  display:absolute;
+}
+
+
   .loader {
     --p: 0;
     display: grid;
@@ -59,9 +112,15 @@ body {
   }
 
 
+/*
 
-
-
+.backgroundTest{
+    z-index: 1;
+}
+.notBackground{
+    z-index: 2;
+}
+*/
 
 
 #container {
