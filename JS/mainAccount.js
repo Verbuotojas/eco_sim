@@ -6,26 +6,26 @@ let form2 = document.querySelector("#form2");
 
 form2.addEventListener("submit", function (e) {
     e.preventDefault();
-   
+
     accountName = e.target.elements.accountName.value;
- 
+
     console.log(accountName);
     // console.log(account);
 
     let accuntNr = {
         name: accountName,
         cash: 500,
-        storehouse:100,
-        apple:0
+        storehouse: 100,
+        apple: 0
     };
-    
+
     let myAccountSerialized = JSON.stringify(accuntNr);
-    
+
     console.log(myAccountSerialized);
 
 
-localStorage.setItem('account', myAccountSerialized);
-location.replace("index.html");
+    localStorage.setItem('account', myAccountSerialized);
+    location.replace("index.html");
 
 
 })
@@ -48,35 +48,33 @@ var matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^
 matrix = matrix.split("");
 
 var font_size = 10;
-var columns = c.width/font_size; //number of columns for the rain
+var columns = c.width / font_size; //number of columns for the rain
 //an array of drops - one per column
 var drops = [];
 //x below is the x coordinate
 //1 = y co-ordinate of the drop(same for every drop initially)
-for(var x = 0; x < columns; x++)
-    drops[x] = 1; 
+for (var x = 0; x < columns; x++)
+    drops[x] = 1;
 
 //drawing the characters
-function draw()
-{
+function draw() {
     //Black BG for the canvas
     //translucent BG to show trail
     ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
     ctx.fillRect(0, 0, c.width, c.height);
 
-    ctx.fillStyle = "#f4427d";//green text
+    ctx.fillStyle = "#4DC3FF";//green text
     ctx.font = font_size + "px arial";
     //looping over drops
-    for(var i = 0; i < drops.length; i++)
-    {
+    for (var i = 0; i < drops.length; i++) {
         //a random chinese character to print
-        var text = matrix[Math.floor(Math.random()*matrix.length)];
+        var text = matrix[Math.floor(Math.random() * matrix.length)];
         //x = i*font_size, y = value of drops[i]*font_size
-        ctx.fillText(text, i*font_size, drops[i]*font_size);
+        ctx.fillText(text, i * font_size, drops[i] * font_size);
 
         //sending the drop back to the top randomly after it has crossed the screen
         //adding a randomness to the reset to make the drops scattered on the Y axis
-        if(drops[i]*font_size > c.height && Math.random() > 0.975)
+        if (drops[i] * font_size > c.height && Math.random() > 0.975)
             drops[i] = 0;
 
         //incrementing Y coordinate
