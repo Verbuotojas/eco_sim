@@ -13,6 +13,7 @@ if (localStorage.getItem('account') == null && location.pathname == "/index.html
 
 let numberArray = [];
 
+
 console.log(numberArray);
 
 let quantity = document.getElementById('quantity');
@@ -50,7 +51,7 @@ setInterval(function () {
 
 
 
-    //lentele obuoliu kainos
+ 
 
     chartView();
 
@@ -61,22 +62,11 @@ setInterval(function () {
             type: 'line',
 
             data: {
-                labels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'],
+                labels: ['', '', '', '', '', '', '', '', '', '', '', ''],
                 datasets: [{
                     label: 'Price',
                     data: [
-                        // { x: 1, y: numberArray[11] },
-                        // { x: 2, y: numberArray[10] },
-                        // { x: 3, y: numberArray[9] },
-                        // { x: 4, y: numberArray[8] },
-                        // { x: 5, y: numberArray[7] },
-                        // { x: 6, y: numberArray[6] },
-                        // { x: 7, y: numberArray[5] },
-                        // { x: 8, y: numberArray[4] },
-                        // { x: 9, y: numberArray[3] },
-                        // { x: 10, y: numberArray[2] },
-                        // { x: 11, y: numberArray[1] },
-                        // { x: 12, y: numberArray[0] }],
+    
                         numberArray[11], numberArray[10], numberArray[9], numberArray[8], numberArray[7], numberArray[6], numberArray[5], numberArray[4], numberArray[3], numberArray[2], numberArray[1], numberArray[0]],
                     fill: false,
                     backgroundColor: [
@@ -100,90 +90,23 @@ setInterval(function () {
             },
 
 
-            // options: {
-
-
-            //     annotation: {
-            //       annotations: [
-            //     //       {
-            //     //     type: 'line',
-            //     //     mode: 'vertical',
-            //     //     yScaleID: 'x-axis-0',
-            //     //     value:  '11',
-            //     //     // yMax: 12,
-            //     //     borderColor: 'rgba(255, 51, 51, 2.25)',
-            //     //     borderWidth: 5,
-            //     //     backgroundColor: 'rgba(255, 51, 51, 0.25)',
-            //     //   },
-            //       {
-            //         type: 'line',
-            //         mode: 'horizontal',
-            //         scaleID: 'x-axis-0',
-            //         value: '8',
-            //         borderColor: 'tomato',
-            //         borderWidth: 1
-            //     }
-
-            //     // ,
-
-
-
-            //     //   {
-            //     //     type: 'box',
-            //     //     yScaleID: 'y-axis-0',
-            //     //     yMin:  -1,
-            //     //     yMax: 1,
-            //     //     borderColor: 'rgba(255, 255, 0, 0.25)',
-            //     //     borderWidth: 1,
-            //     //     backgroundColor: 'rgba(255, 255, 0, 0.25)',
-            //     //   }, {
-            //     //     type: 'box',
-            //     //     yScaleID: 'y-axis-0',
-            //     //     yMin:  -2,
-            //     //     yMax: -1,
-            //     //     borderColor: 'rgba(0, 204, 0, 0.25)',
-            //     //     borderWidth: 1,
-            //     //     backgroundColor: 'rgba(0, 204, 0, 0.25)',
-            //     //   }
-
-            //     ],
-            //     drawTime: "afterDraw" // (default)
-            //     }
-            //   }
-            // });
+           
 
 
             options: {
+                
 
                 scales: {
-                    // xAxes: [{
-                    //     display: true,
-                    //       ticks: {
-                    //                 beginAtZero:true
-                    //             },        
-                    //   }],
+                  
                     yAxes: [{
-                        // display: true,
+                        
 
                         ticks: {
                             beginAtZero: true
                         }
                     }]
                 },
-                // annotation: {
-                //     annotations: [
-                //         {
-                //             type: 'line',
-                //             mode: 'vertical',
-                //             scaleID: 'x-axis-0',
-                //             value: '8',
-                //             borderColor: 'tomato',
-                //             borderWidth: 5
-                //         }
-                //     ],
-                //     drawTime: "afterDraw"// (default)
-
-                // },
+              
 
                 animation: {
                     duration: 0
@@ -192,11 +115,9 @@ setInterval(function () {
 
             }
         });
-
     }
 
-
-}, 1000);
+}, 2000);
 
 let buttonBuy = document.getElementById('button-buy');
 let buttonSell = document.getElementById('button-sell');
@@ -225,7 +146,7 @@ console.log(myAccountDeserialized);
 console.log(localStorage.getItem('cash'));
 
 cashView.textContent = myAccountDeserialized.cash + ' $';
-storeView.textContent = myAccountDeserialized.apple;
+storeView.textContent = myAccountDeserialized.apple + '/' + myAccountDeserialized.storehouse;
 
 
 
@@ -280,7 +201,7 @@ buttonBuy.onclick = function () {
 
     }
     cashView.textContent = myAccountDeserialized.cash + ' $';
-    storeView.textContent = myAccountDeserialized.apple;
+    storeView.textContent = myAccountDeserialized.apple + '/' + myAccountDeserialized.storehouse;
 }
 
 //pardavimai obuoliai
@@ -303,37 +224,8 @@ buttonSell.onclick = function () {
 
     }
     cashView.textContent = myAccountDeserialized.cash + ' $';
-    storeView.textContent = myAccountDeserialized.apple;
+storeView.textContent = myAccountDeserialized.apple + '/' + myAccountDeserialized.storehouse;
 }
-
-
-
-
-
-
-
-//storehouse procent
-
-// // progressbar.js@1.0.0 version is used
-// // Docs: http://progressbarjs.readthedocs.org/en/1.0.0/
-
-// var bar = new ProgressBar.Circle(container1, {
-//     color: '#FFEA82',
-//     trailColor: '#eee',
-//     trailWidth: 1,
-//     duration: 1400,
-//     easing: 'bounce',
-//     strokeWidth: 6,
-//     from: {color: '#FFEA82', a:0},
-//     to: {color: '#ED6A5A', a:1},
-//     // Set default step function for all animate calls
-//     step: function(state, circle) {
-//       circle.path.setAttribute('stroke', state.color);
-//     }
-//   });
-
-//   bar.animate(1.0);  // Number from 0.0 to 1.0
-
 
 
 CSS.registerProperty({
@@ -346,28 +238,12 @@ CSS.registerProperty({
 
 
 
-//var ProgressBar = require('progressbar.js')
-//var line = new ProgressBar.Line('#container');
-//
-//
-//
-//var bar = new ProgressBar.Circle(container, {
-//  color: '#FFEA82',
-//  trailColor: '#eee',
-//  trailWidth: 1,
-//  duration: 1400,
-//  easing: 'bounce',
-//  strokeWidth: 6,
-//  from: {color: '#FFEA82', a:0},
-//  to: {color: '#ED6A5A', a:1},
-//  // Set default step function for all animate calls
-//  step: function(state, circle) {
-//    circle.path.setAttribute('stroke', state.color);
-//  }
-//});
-//
-//bar.animate(1.0);  // Number from 0.0 to 1.0
 
+window.addEventListener("scroll", function(){
+                        var header = document.querySelector("header");
+header.classList.toggle("sticky", window.scrollY > 0 );
+                        
+                        })
 
 
 
