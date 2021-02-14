@@ -36,6 +36,14 @@ body {
     box-shadow: 5px 7px 5px 5px rgba(77, 195, 255, 0.38);
 }
 
+.buttonEnter {
+    background-color: #4DC3FF;
+    color: #222;
+    font-size: 1.5em;
+}
+
+/* index langas */
+
 header {
     position: fixed;
     top: 0;
@@ -45,15 +53,8 @@ header {
     align-items: center;
     transition: 0.6s;
     z-index: 100000;
+    background: #222;
 }
-
-.buttonEnter {
-    background-color: #4DC3FF;
-    color: #222;
-    font-size: 1.5em;
-}
-
-/* index langas */
 
 header .logo {
     position: relative;
@@ -96,6 +97,10 @@ main {
     color: #222;
     background-color: #4DC3FF;
     border-radius: 8px;
+}
+
+.numberOfP {
+    margin-bottom: 80px;
 }
 
 /* pabaiga */
