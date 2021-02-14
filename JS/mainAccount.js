@@ -1,7 +1,7 @@
 
 let accountName;
 
-
+// registracija
 let form2 = document.querySelector("#form2");
 
 form2.addEventListener("submit", function (e) {
@@ -12,6 +12,8 @@ form2.addEventListener("submit", function (e) {
     console.log(accountName);
     // console.log(account);
 
+
+    // konstruktorius
     let accuntNr = {
         name: accountName,
         cash: 500,
@@ -32,56 +34,51 @@ form2.addEventListener("submit", function (e) {
 
 console.log(localStorage.getItem('account'));
 
-
-
-
+// c=backgroundo canvas 
 var c = document.getElementById("c");
 var ctx = c.getContext("2d");
 
-//making the canvas full screen
+//canvas padaromas pilnu ekranu
 c.height = window.innerHeight;
 c.width = window.innerWidth;
 
-//chinese characters - taken from the unicode charset
+//elementai efektui
 var matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
-//converting the string into an array of single characters
+//atskiriami simboliai iš stringo
 matrix = matrix.split("");
 
 var font_size = 10;
-var columns = c.width / font_size; //number of columns for the rain
-//an array of drops - one per column
+var columns = c.width / font_size; //kiekis simboliu kolonoje lietaus efekte
+
 var drops = [];
-//x below is the x coordinate
-//1 = y co-ordinate of the drop(same for every drop initially)
+
+//x kordinaciu asyje
 for (var x = 0; x < columns; x++)
     drops[x] = 1;
 
-//drawing the characters
+//uzrasymas
 function draw() {
-    //Black BG for the canvas
-    //translucent BG to show trail
+
     ctx.fillStyle = "rgba(0, 0, 0, 0.04)";
     ctx.fillRect(0, 0, c.width, c.height);
 
-    ctx.fillStyle = "#4DC3FF";//green text
+    ctx.fillStyle = "#4DC3FF";//texto spalva
     ctx.font = font_size + "px arial";
-    //looping over drops
+    //pasikratojimas kritimo
     for (var i = 0; i < drops.length; i++) {
-        //a random chinese character to print
+        //generuojami atsitiktiniai simboliai
         var text = matrix[Math.floor(Math.random() * matrix.length)];
-        //x = i*font_size, y = value of drops[i]*font_size
+
         ctx.fillText(text, i * font_size, drops[i] * font_size);
 
-        //sending the drop back to the top randomly after it has crossed the screen
-        //adding a randomness to the reset to make the drops scattered on the Y axis
         if (drops[i] * font_size > c.height && Math.random() > 0.975)
             drops[i] = 0;
 
-        //incrementing Y coordinate
+        //didinama y kordinatė
         drops[i]++;
     }
 }
-
+// laiko terminas
 setInterval(draw, 35);
 
 
