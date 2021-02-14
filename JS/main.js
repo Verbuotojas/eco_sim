@@ -57,8 +57,8 @@ setInterval(function () {
 
     function chartView() {
 
-        var ctx = document.getElementById('myChart').getContext('2d');
-        var myChart = new Chart(ctx, {
+        var ctx = document.getElementById('ecoTable').getContext('2d');
+        var ecoTable = new Chart(ctx, {
             type: 'line',
 
             data: {
