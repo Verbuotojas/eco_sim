@@ -35,7 +35,7 @@ form2.addEventListener("submit", function (e) {
 console.log(localStorage.getItem('account'));
 
 // c=backgroundo canvas 
-var c = document.getElementById("c");
+var c = document.getElementById("cMatcix");
 var ctx = c.getContext("2d");
 
 //canvas padaromas pilnu ekranu
