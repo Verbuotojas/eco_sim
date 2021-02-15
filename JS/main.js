@@ -1,6 +1,6 @@
 // patikrinama ar yra skurtas vartotojas 
 // jeigu vartotojas nera sukurtas jis nukreipiamas sukurti vartotoja
-if (localStorage.getItem('account') == null && location.pathname == "/index.html") {
+if (localStorage.getItem('account') === null && location.pathname == "/index.html") {
 
     location.replace("account.html");
 }
@@ -119,8 +119,8 @@ function doThing() {
 //perkamas produktas
 buttonBuy.onclick = function () {
 
-    if (myAccountDeserialized.cash >= numberArray[0] * numberOfThings
-        && myAccountDeserialized.storehouse >= myAccountDeserialized.apple + numberOfThings) {
+    if (myAccountDeserialized.cash >= numberArray[0] * numberOfThings && 
+        myAccountDeserialized.storehouse >= myAccountDeserialized.apple + numberOfThings) {
 
         myAccountDeserialized.cash -= (numberArray[0] * numberOfThings);
 
@@ -132,7 +132,7 @@ buttonBuy.onclick = function () {
 
     cashView.textContent = myAccountDeserialized.cash + ' $';
     storeView.textContent = myAccountDeserialized.apple + '/' + myAccountDeserialized.storehouse;
-}
+};
 
 //parduodami produktai
 buttonSell.onclick = function () {
@@ -145,7 +145,7 @@ buttonSell.onclick = function () {
     }
     cashView.textContent = myAccountDeserialized.cash + ' $';
     storeView.textContent = myAccountDeserialized.apple + '/' + myAccountDeserialized.storehouse;
-}
+};
 
 
 // pasilieka virsuje headeris
@@ -153,4 +153,4 @@ window.addEventListener("scroll", function () {
     var header = document.querySelector("header");
     header.classList.toggle("sticky", window.scrollY > 0);
 
-})
+});

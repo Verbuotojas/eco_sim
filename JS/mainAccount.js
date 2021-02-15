@@ -30,7 +30,7 @@ form2.addEventListener("submit", function (e) {
     location.replace("index.html");
 
 
-})
+});
 
 console.log(localStorage.getItem('account'));
 
